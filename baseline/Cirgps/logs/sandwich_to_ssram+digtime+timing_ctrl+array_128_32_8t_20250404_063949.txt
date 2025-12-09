@@ -1,0 +1,69 @@
+日志文件已创建：./logs/sandwich_to_ssram+digtime+timing_ctrl+array_128_32_8t_20250404_063949.txt
+已启用主动垃圾回收机制
+初始内存状态:
+当前内存使用: 0.54 GB
+GPU 0 显存使用: 0.00 GB (已分配), 0.00 GB (已预留)
+GPU 1 显存使用: 0.00 GB (已分配), 0.00 GB (已预留)
+GPU 2 显存使用: 0.00 GB (已分配), 0.00 GB (已预留)
+GPU 3 显存使用: 0.00 GB (已分配), 0.00 GB (已预留)
+Using GPU: 1
+已限制GPU显存使用为50.0%
+============= PID = 3094931 ============= 
+Parameter u: 0.5
+参数配置:
+  seed: 42
+  train_dataset: sandwich
+  test_dataset: ssram+digtime+timing_ctrl+array_128_32_8t
+  add_tar_edge: 0
+  train_sample_rate: 0.1
+  test_sample_rate: 1.0
+  u: 0.5
+  task: regression
+  use_pe: 1
+  num_hops: 1
+  max_dist: 350
+  num_workers: 4
+  gpu: 1
+  epochs: 200
+  batch_size: 128
+  lr: 0.0001
+  model: clustergcn
+  num_gnn_layers: 4
+  num_head_layers: 2
+  hid_dim: 144
+  dropout: 0.3
+  use_bn: 1
+  act_fn: relu
+  src_dst_agg: concat
+  use_stats: 0
+  mem_fraction: 0.5
+  pe_chunk_size: 2000
+  skip_pe_calculation: 0
+  low_memory_mode: 0
+开始加载数据集...
+SealSramDataset includes ['sandwich'] circuits
+load processed sandwich, len(data_list)=698088, data_offset=0 
+PID = 3094931
+Building dataset sandwich took 00:00:00.99
+Dataloader: Loading success.
+训练集加载完成，检查内存使用:
+当前内存使用: 2.12 GB
+GPU 0 显存使用: 0.00 GB (已分配), 0.00 GB (已预留)
+GPU 1 显存使用: 0.00 GB (已分配), 0.00 GB (已预留)
+GPU 2 显存使用: 0.00 GB (已分配), 0.00 GB (已预留)
+GPU 3 显存使用: 0.00 GB (已分配), 0.00 GB (已预留)
+SealSramDataset includes ['ssram', 'digtime', 'timing_ctrl', 'array_128_32_8t'] circuits
+load processed ssram, len(data_list)=175413, data_offset=0 
+load processed digtime, len(data_list)=2814, data_offset=1 
+load processed timing_ctrl, len(data_list)=3333, data_offset=2 
+load processed array_128_32_8t, len(data_list)=73569, data_offset=3 
+PID = 3094931
+Building dataset ssram+digtime+timing_ctrl+array_128_32_8t took 00:00:00.10
+Dataloader: Loading success.
+测试集加载完成，检查内存使用:
+当前内存使用: 2.19 GB
+GPU 0 显存使用: 0.00 GB (已分配), 0.00 GB (已预留)
+GPU 1 显存使用: 0.00 GB (已分配), 0.00 GB (已预留)
+GPU 2 显存使用: 0.00 GB (已分配), 0.00 GB (已预留)
+GPU 3 显存使用: 0.00 GB (已分配), 0.00 GB (已预留)
+开始训练过程...

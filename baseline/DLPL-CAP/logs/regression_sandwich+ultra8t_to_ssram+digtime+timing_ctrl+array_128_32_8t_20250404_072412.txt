@@ -1,0 +1,85 @@
+============= PID = 3168972 ============= 
+Log file created at: ./logs/regression_sandwich+ultra8t_to_ssram+digtime+timing_ctrl+array_128_32_8t_20250404_072412.txt
+Parameters:
+  seed: 42
+  train_dataset: sandwich+ultra8t
+  test_dataset: ssram+digtime+timing_ctrl+array_128_32_8t
+  task: regression
+  max_dist: 350
+  num_workers: 4
+  gpu: 1
+  epochs: 200
+  batch_size: 32
+  lr: 5e-05
+  num_gnn_layers: 4
+  num_head_layers: 2
+  hid_dim: 32
+  dropout: 0.3
+  use_bn: 0
+  act_fn: relu
+  src_dst_agg: concat
+  num_hops: 4
+  to_undirected: 1
+  use_stats: 1
+  log_dir: ./logs
+  use_focal_loss: 0
+  train_sample_rate: 0.1
+  test_sample_rate: 1.0
+  use_amp: 1
+Namespace(seed=42, train_dataset='sandwich+ultra8t', test_dataset='ssram+digtime+timing_ctrl+array_128_32_8t', task='regression', max_dist=350, num_workers=4, gpu=1, epochs=200, batch_size=32, lr=5e-05, num_gnn_layers=4, num_head_layers=2, hid_dim=32, dropout=0.3, use_bn=0, act_fn='relu', src_dst_agg='concat', num_hops=4, to_undirected=1, use_stats=1, log_dir='./logs', use_focal_loss=0, train_sample_rate=0.1, test_sample_rate=1.0, use_amp=1)
+SealSramDataset includes ['sandwich', 'ultra8t'] circuits
+load processed sandwich, len(data_list)=698088, data_offset=0 
+load processed ultra8t, len(data_list)=555756, data_offset=1 
+PID = 3168972
+Building dataset sandwich+ultra8t took 00:00:02.35
+Dataloader: Loading success.
+SealSramDataset includes ['ssram', 'digtime', 'timing_ctrl', 'array_128_32_8t'] circuits
+load processed ssram, len(data_list)=175413, data_offset=0 
+load processed digtime, len(data_list)=2814, data_offset=1 
+load processed timing_ctrl, len(data_list)=3333, data_offset=2 
+load processed array_128_32_8t, len(data_list)=73569, data_offset=3 
+PID = 3168972
+Building dataset ssram+digtime+timing_ctrl+array_128_32_8t took 00:00:00.06
+Dataloader: Loading success.
+====== Train sandwich+ultra8t to Test ssram+digtime+timing_ctrl+array_128_32_8t ======
+normalizing node_attr 0: tensor([[7.5334e+04, 6.2784e+04, 1.2550e+04, 2.4000e+01, 1.2576e-03, 3.0150e-03,
+         2.0000e+00, 4.0000e-06, 1.7400e-04, 1.2000e+01, 3.3600e+03, 9.6000e-05,
+         1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00]]) ...
+normalizing node_attr 1: tensor([[1.2800e+02, 3.0000e-06, 2.0000e-06, 2.2499e-13, 6.1933e-06, 2.0000e+00,
+         2.0000e-06, 1.7400e-04, 4.0000e+01, 2.8000e+02, 1.0500e-05, 1.0000e+00,
+         1.0000e+00, 1.0000e+00, 4.0000e+00, 5.0000e+00, 1.0000e+00]]) ...
+self._data.edge_label tensor([0.6028, 0.5390, 0.6863,  ..., 0.7240, 0.7239, 0.6304])
+normalizing node_attr 0: tensor([[8.0000e+02, 5.1200e+02, 8.2400e+02, 7.9200e+02, 4.4080e-04, 1.5360e-05,
+         1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00,
+         1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00]]) ...
+normalizing node_attr 1: tensor([[1.0000e+00, 2.7000e-06, 3.0000e-07, 2.0265e-13, 5.5933e-06, 1.0000e+00,
+         1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00,
+         1.0000e+00, 1.0000e+00, 4.0000e+00, 2.0000e+00, 1.0000e+00]]) ...
+self._data.edge_label tensor([0.6083, 0.3154, 0.2664,  ..., 0.7253, 0.7239, 0.7253])
+调用dataset_sampling处理数据集...
+数据加载器创建完成: 1个训练，1个验证，4个测试
+
+===== Epoch 1/200 - Elapsed: 2391.03s =====
+train  | loss: 0.031388 | mae: 0.133363 | mse: 0.031388 | rmse: 0.031388 | r2: -0.043175
+分类结果:
+train  | loss: 0.366608 | accuracy: 0.856992 | precision: 0.890318 | recall: 0.920625 | f1: 0.905218 | auc: 0.797411
+
+----- VAL 评估 - 用时: 521.46s -----
+val    | loss: 0.018991 | mae: 0.107106 | mse: 0.018991 | rmse: 0.018991 | r2: 0.366388
+分类结果:
+val    | loss: 0.287000 | accuracy: 0.887845 | precision: 0.924582 | recall: 0.924537 | f1: 0.924559 | auc: 0.853055
+
+----- TEST_SSRAM 评估 - 用时: 61.68s -----
+test_ssram | loss: 0.015492 | mae: 0.096038 | mse: 0.015492 | rmse: 0.015492 | r2: 0.290324
+分类结果:
+test_ssram | loss: 0.256838 | accuracy: 0.904163 | precision: 0.940137 | recall: 0.934276 | f1: 0.937198 | auc: 0.870100
+
+----- TEST_DIGTIME 评估 - 用时: 1.91s -----
+test_digtime | loss: 0.017835 | mae: 0.103928 | mse: 0.017835 | rmse: 0.017835 | r2: 0.201512
+分类结果:
+test_digtime | loss: 0.451052 | accuracy: 0.815565 | precision: 0.925906 | recall: 0.820501 | f1: 0.870023 | auc: 0.810537
+
+----- TEST_TIMING_CTRL 评估 - 用时: 1.60s -----
+test_timing_ctrl | loss: 0.018789 | mae: 0.120183 | mse: 0.018789 | rmse: 0.018789 | r2: 0.415030
+分类结果:
+test_timing_ctrl | loss: 0.206373 | accuracy: 0.957996 | precision: 0.938344 | recall: 0.998563 | f1: 0.967517 | auc: 0.944262

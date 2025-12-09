@@ -1,0 +1,151 @@
+============= PID = 2577119 ============= 
+Log file created at: ./logs/regression_sandwich+ultra8t_to_ssram+digtime+timing_ctrl+array_128_32_8t_20250402_120114.txt
+Parameters:
+  seed: 42
+  train_dataset: sandwich+ultra8t
+  test_dataset: ssram+digtime+timing_ctrl+array_128_32_8t
+  task: regression
+  max_dist: 350
+  num_workers: 4
+  gpu: 1
+  epochs: 200
+  batch_size: 256
+  lr: 0.001
+  num_gnn_layers: 4
+  num_head_layers: 4
+  hid_dim: 32
+  dropout: 0.0
+  use_bn: 0
+  act_fn: relu
+  src_dst_agg: concat
+  num_hops: 2
+  to_undirected: 1
+  use_stats: 1
+  log_dir: ./logs
+  use_focal_loss: 0
+  train_sample_rate: 0.1
+  test_sample_rate: 1.0
+Namespace(seed=42, train_dataset='sandwich+ultra8t', test_dataset='ssram+digtime+timing_ctrl+array_128_32_8t', task='regression', max_dist=350, num_workers=4, gpu=1, epochs=200, batch_size=256, lr=0.001, num_gnn_layers=4, num_head_layers=4, hid_dim=32, dropout=0.0, use_bn=0, act_fn='relu', src_dst_agg='concat', num_hops=2, to_undirected=1, use_stats=1, log_dir='./logs', use_focal_loss=0, train_sample_rate=0.1, test_sample_rate=1.0)
+SealSramDataset includes ['sandwich', 'ultra8t'] circuits
+load processed sandwich, len(data_list)=698088, data_offset=0 
+load processed ultra8t, len(data_list)=555756, data_offset=1 
+PID = 2577119
+Building dataset sandwich+ultra8t took 00:00:03.62
+Dataloader: Loading success.
+SealSramDataset includes ['ssram', 'digtime', 'timing_ctrl', 'array_128_32_8t'] circuits
+load processed ssram, len(data_list)=175413, data_offset=0 
+load processed digtime, len(data_list)=2814, data_offset=1 
+load processed timing_ctrl, len(data_list)=3333, data_offset=2 
+load processed array_128_32_8t, len(data_list)=73569, data_offset=3 
+PID = 2577119
+Building dataset ssram+digtime+timing_ctrl+array_128_32_8t took 00:00:00.05
+Dataloader: Loading success.
+====== Train sandwich+ultra8t to Test ssram+digtime+timing_ctrl+array_128_32_8t ======
+normalizing node_attr 0: tensor([[7.5334e+04, 6.2784e+04, 1.2550e+04, 2.4000e+01, 1.2576e-03, 3.0150e-03,
+         2.0000e+00, 4.0000e-06, 1.7400e-04, 1.2000e+01, 3.3600e+03, 9.6000e-05,
+         1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00]]) ...
+normalizing node_attr 1: tensor([[1.2800e+02, 3.0000e-06, 2.0000e-06, 2.2499e-13, 6.1933e-06, 2.0000e+00,
+         2.0000e-06, 1.7400e-04, 4.0000e+01, 2.8000e+02, 1.0500e-05, 1.0000e+00,
+         1.0000e+00, 1.0000e+00, 4.0000e+00, 5.0000e+00, 1.0000e+00]]) ...
+self._data.edge_label tensor([0.6028, 0.5390, 0.6863,  ..., 0.7240, 0.7239, 0.6304])
+normalizing node_attr 0: tensor([[8.0000e+02, 5.1200e+02, 8.2400e+02, 7.9200e+02, 4.4080e-04, 1.5360e-05,
+         1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00,
+         1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00]]) ...
+normalizing node_attr 1: tensor([[1.0000e+00, 2.7000e-06, 3.0000e-07, 2.0265e-13, 5.5933e-06, 1.0000e+00,
+         1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00,
+         1.0000e+00, 1.0000e+00, 4.0000e+00, 2.0000e+00, 1.0000e+00]]) ...
+self._data.edge_label tensor([0.6083, 0.3154, 0.2664,  ..., 0.7253, 0.7239, 0.7253])
+调用dataset_sampling处理数据集...
+数据加载器创建完成: 1个训练，1个验证，4个测试
+加载预训练分类器模型: ./models_dlpl-cap-classifier/sandwich+ultra8t_to_ssram+digtime+timing_ctrl+array_128_32_8t/dlpl-cap-classifier_nh_2_tsk_regression_ngl_4_nhl_4_hd_32_us_1_bn_0_dp_0.0_latest.pth
+成功加载模型: ./models_dlpl-cap-classifier/sandwich+ultra8t_to_ssram+digtime+timing_ctrl+array_128_32_8t/dlpl-cap-classifier_nh_2_tsk_regression_ngl_4_nhl_4_hd_32_us_1_bn_0_dp_0.0_latest.pth
+Epoch: 001, Train Class Loss: 0.0122, Train Class Acc: 0.9168, Val Class Acc: 0.9183, Train Reg Loss: 0.0009, Train MAE: 0.0049, Val MAE: 0.0044, Val R2: 0.6119
+Test (ssram) - MAE: 0.0053, R2: 0.3138
+Test (digtime) - MAE: 0.0056, R2: 0.2207
+Test (timing_ctrl) - MAE: 0.0066, R2: 0.4255
+Test (array_128_32_8t) - MAE: 0.0046, R2: 0.4046
+Epoch: 002, Train Class Loss: 0.0119, Train Class Acc: 0.9175, Val Class Acc: 0.9197, Train Reg Loss: 0.0007, Train MAE: 0.0043, Val MAE: 0.0041, Val R2: 0.6423
+Test (ssram) - MAE: 0.0054, R2: 0.3025
+Test (digtime) - MAE: 0.0052, R2: 0.2715
+Test (timing_ctrl) - MAE: 0.0065, R2: 0.4041
+Test (array_128_32_8t) - MAE: 0.0057, R2: 0.1124
+Epoch: 003, Train Class Loss: 0.0116, Train Class Acc: 0.9184, Val Class Acc: 0.9189, Train Reg Loss: 0.0007, Train MAE: 0.0042, Val MAE: 0.0042, Val R2: 0.6419
+Test (ssram) - MAE: 0.0058, R2: 0.1576
+Test (digtime) - MAE: 0.0052, R2: 0.3264
+Test (timing_ctrl) - MAE: 0.0065, R2: 0.4003
+Test (array_128_32_8t) - MAE: 0.0056, R2: 0.1775
+Epoch: 004, Train Class Loss: 0.0115, Train Class Acc: 0.9186, Val Class Acc: 0.9203, Train Reg Loss: 0.0006, Train MAE: 0.0041, Val MAE: 0.0040, Val R2: 0.6554
+Test (ssram) - MAE: 0.0056, R2: 0.2488
+Test (digtime) - MAE: 0.0052, R2: 0.3005
+Test (timing_ctrl) - MAE: 0.0064, R2: 0.4219
+Test (array_128_32_8t) - MAE: 0.0054, R2: 0.1641
+Epoch: 005, Train Class Loss: 0.0114, Train Class Acc: 0.9191, Val Class Acc: 0.9208, Train Reg Loss: 0.0006, Train MAE: 0.0041, Val MAE: 0.0040, Val R2: 0.6586
+Test (ssram) - MAE: 0.0058, R2: 0.2281
+Test (digtime) - MAE: 0.0054, R2: 0.2812
+Test (timing_ctrl) - MAE: 0.0064, R2: 0.3479
+Test (array_128_32_8t) - MAE: 0.0067, R2: -0.1627
+Epoch: 006, Train Class Loss: 0.0114, Train Class Acc: 0.9196, Val Class Acc: 0.9217, Train Reg Loss: 0.0006, Train MAE: 0.0040, Val MAE: 0.0040, Val R2: 0.6631
+Test (ssram) - MAE: 0.0059, R2: 0.1221
+Test (digtime) - MAE: 0.0057, R2: 0.2268
+Test (timing_ctrl) - MAE: 0.0066, R2: 0.3427
+Test (array_128_32_8t) - MAE: 0.0068, R2: -0.1538
+Epoch: 007, Train Class Loss: 0.0113, Train Class Acc: 0.9199, Val Class Acc: 0.9219, Train Reg Loss: 0.0006, Train MAE: 0.0040, Val MAE: 0.0040, Val R2: 0.6639
+Test (ssram) - MAE: 0.0057, R2: 0.1972
+Test (digtime) - MAE: 0.0058, R2: 0.1771
+Test (timing_ctrl) - MAE: 0.0060, R2: 0.4746
+Test (array_128_32_8t) - MAE: 0.0064, R2: -0.0477
+Epoch: 008, Train Class Loss: 0.0112, Train Class Acc: 0.9207, Val Class Acc: 0.9232, Train Reg Loss: 0.0006, Train MAE: 0.0040, Val MAE: 0.0039, Val R2: 0.6674
+Test (ssram) - MAE: 0.0064, R2: 0.0093
+Test (digtime) - MAE: 0.0056, R2: 0.0946
+Test (timing_ctrl) - MAE: 0.0063, R2: 0.4186
+Test (array_128_32_8t) - MAE: 0.0058, R2: 0.0615
+Epoch: 009, Train Class Loss: 0.0111, Train Class Acc: 0.9214, Val Class Acc: 0.9231, Train Reg Loss: 0.0006, Train MAE: 0.0039, Val MAE: 0.0039, Val R2: 0.6686
+Test (ssram) - MAE: 0.0067, R2: -0.1001
+Test (digtime) - MAE: 0.0061, R2: 0.0555
+Test (timing_ctrl) - MAE: 0.0058, R2: 0.4157
+Test (array_128_32_8t) - MAE: 0.0057, R2: 0.0908
+Epoch: 010, Train Class Loss: 0.0110, Train Class Acc: 0.9224, Val Class Acc: 0.9240, Train Reg Loss: 0.0006, Train MAE: 0.0039, Val MAE: 0.0040, Val R2: 0.6687
+Test (ssram) - MAE: 0.0070, R2: -0.2136
+Test (digtime) - MAE: 0.0070, R2: -0.1534
+Test (timing_ctrl) - MAE: 0.0059, R2: 0.4848
+Test (array_128_32_8t) - MAE: 0.0061, R2: -0.0434
+Epoch: 011, Train Class Loss: 0.0109, Train Class Acc: 0.9228, Val Class Acc: 0.9228, Train Reg Loss: 0.0006, Train MAE: 0.0039, Val MAE: 0.0038, Val R2: 0.6734
+Test (ssram) - MAE: 0.0069, R2: -0.2849
+Test (digtime) - MAE: 0.0063, R2: 0.0032
+Test (timing_ctrl) - MAE: 0.0053, R2: 0.5267
+Test (array_128_32_8t) - MAE: 0.0057, R2: 0.0232
+Epoch: 012, Train Class Loss: 0.0108, Train Class Acc: 0.9233, Val Class Acc: 0.9242, Train Reg Loss: 0.0006, Train MAE: 0.0039, Val MAE: 0.0039, Val R2: 0.6776
+Test (ssram) - MAE: 0.0067, R2: -0.1768
+Test (digtime) - MAE: 0.0068, R2: -0.1589
+Test (timing_ctrl) - MAE: 0.0059, R2: 0.4638
+Test (array_128_32_8t) - MAE: 0.0059, R2: -0.0495
+Epoch: 013, Train Class Loss: 0.0108, Train Class Acc: 0.9236, Val Class Acc: 0.9248, Train Reg Loss: 0.0006, Train MAE: 0.0039, Val MAE: 0.0038, Val R2: 0.6782
+Test (ssram) - MAE: 0.0064, R2: -0.0717
+Test (digtime) - MAE: 0.0065, R2: -0.1015
+Test (timing_ctrl) - MAE: 0.0060, R2: 0.4062
+Test (array_128_32_8t) - MAE: 0.0059, R2: -0.0529
+Epoch: 014, Train Class Loss: 0.0107, Train Class Acc: 0.9239, Val Class Acc: 0.9244, Train Reg Loss: 0.0006, Train MAE: 0.0039, Val MAE: 0.0038, Val R2: 0.6789
+Test (ssram) - MAE: 0.0063, R2: -0.0534
+Test (digtime) - MAE: 0.0061, R2: -0.0079
+Test (timing_ctrl) - MAE: 0.0058, R2: 0.4643
+Test (array_128_32_8t) - MAE: 0.0054, R2: 0.0454
+Epoch: 015, Train Class Loss: 0.0107, Train Class Acc: 0.9242, Val Class Acc: 0.9253, Train Reg Loss: 0.0006, Train MAE: 0.0038, Val MAE: 0.0038, Val R2: 0.6826
+Test (ssram) - MAE: 0.0063, R2: -0.1047
+Test (digtime) - MAE: 0.0062, R2: -0.1085
+Test (timing_ctrl) - MAE: 0.0059, R2: 0.4734
+Test (array_128_32_8t) - MAE: 0.0052, R2: 0.1737
+Epoch: 016, Train Class Loss: 0.0107, Train Class Acc: 0.9243, Val Class Acc: 0.9257, Train Reg Loss: 0.0006, Train MAE: 0.0038, Val MAE: 0.0038, Val R2: 0.6834
+Test (ssram) - MAE: 0.0064, R2: -0.0334
+Test (digtime) - MAE: 0.0060, R2: 0.0732
+Test (timing_ctrl) - MAE: 0.0061, R2: 0.4418
+Test (array_128_32_8t) - MAE: 0.0054, R2: 0.1577
+Epoch: 017, Train Class Loss: 0.0106, Train Class Acc: 0.9245, Val Class Acc: 0.9256, Train Reg Loss: 0.0006, Train MAE: 0.0038, Val MAE: 0.0038, Val R2: 0.6822
+Test (ssram) - MAE: 0.0060, R2: 0.0374
+Test (digtime) - MAE: 0.0058, R2: 0.0294
+Test (timing_ctrl) - MAE: 0.0066, R2: 0.2939
+Test (array_128_32_8t) - MAE: 0.0054, R2: 0.1330
+Epoch: 018, Train Class Loss: 0.0106, Train Class Acc: 0.9247, Val Class Acc: 0.9264, Train Reg Loss: 0.0006, Train MAE: 0.0038, Val MAE: 0.0038, Val R2: 0.6830
+Test (ssram) - MAE: 0.0066, R2: -0.0787
+Test (digtime) - MAE: 0.0062, R2: 0.0185
+Test (timing_ctrl) - MAE: 0.0061, R2: 0.4172
+Test (array_128_32_8t) - MAE: 0.0058, R2: 0.0794

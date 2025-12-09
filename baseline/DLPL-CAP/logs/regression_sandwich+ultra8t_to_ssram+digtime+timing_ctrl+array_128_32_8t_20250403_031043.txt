@@ -1,0 +1,617 @@
+============= PID = 406625 ============= 
+Log file created at: ./logs/regression_sandwich+ultra8t_to_ssram+digtime+timing_ctrl+array_128_32_8t_20250403_031043.txt
+Parameters:
+  seed: 42
+  train_dataset: sandwich+ultra8t
+  test_dataset: ssram+digtime+timing_ctrl+array_128_32_8t
+  task: regression
+  max_dist: 350
+  num_workers: 4
+  gpu: 0
+  epochs: 800
+  batch_size: 32
+  lr: 5e-05
+  num_gnn_layers: 4
+  num_head_layers: 2
+  hid_dim: 32
+  dropout: 0.3
+  use_bn: 0
+  act_fn: relu
+  src_dst_agg: concat
+  num_hops: 4
+  to_undirected: 1
+  use_stats: 1
+  log_dir: ./logs
+  use_focal_loss: 0
+  train_sample_rate: 0.1
+  test_sample_rate: 1.0
+Namespace(seed=42, train_dataset='sandwich+ultra8t', test_dataset='ssram+digtime+timing_ctrl+array_128_32_8t', task='regression', max_dist=350, num_workers=4, gpu=0, epochs=800, batch_size=32, lr=5e-05, num_gnn_layers=4, num_head_layers=2, hid_dim=32, dropout=0.3, use_bn=0, act_fn='relu', src_dst_agg='concat', num_hops=4, to_undirected=1, use_stats=1, log_dir='./logs', use_focal_loss=0, train_sample_rate=0.1, test_sample_rate=1.0)
+SealSramDataset includes ['sandwich', 'ultra8t'] circuits
+load processed sandwich, len(data_list)=698088, data_offset=0 
+load processed ultra8t, len(data_list)=555756, data_offset=1 
+PID = 406625
+Building dataset sandwich+ultra8t took 00:00:02.27
+Dataloader: Loading success.
+SealSramDataset includes ['ssram', 'digtime', 'timing_ctrl', 'array_128_32_8t'] circuits
+load processed ssram, len(data_list)=175413, data_offset=0 
+load processed digtime, len(data_list)=2814, data_offset=1 
+load processed timing_ctrl, len(data_list)=3333, data_offset=2 
+load processed array_128_32_8t, len(data_list)=73569, data_offset=3 
+PID = 406625
+Building dataset ssram+digtime+timing_ctrl+array_128_32_8t took 00:00:00.05
+Dataloader: Loading success.
+====== Train sandwich+ultra8t to Test ssram+digtime+timing_ctrl+array_128_32_8t ======
+normalizing node_attr 0: tensor([[7.5334e+04, 6.2784e+04, 1.2550e+04, 2.4000e+01, 1.2576e-03, 3.0150e-03,
+         2.0000e+00, 4.0000e-06, 1.7400e-04, 1.2000e+01, 3.3600e+03, 9.6000e-05,
+         1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00]]) ...
+normalizing node_attr 1: tensor([[1.2800e+02, 3.0000e-06, 2.0000e-06, 2.2499e-13, 6.1933e-06, 2.0000e+00,
+         2.0000e-06, 1.7400e-04, 4.0000e+01, 2.8000e+02, 1.0500e-05, 1.0000e+00,
+         1.0000e+00, 1.0000e+00, 4.0000e+00, 5.0000e+00, 1.0000e+00]]) ...
+self._data.edge_label tensor([0.6028, 0.5390, 0.6863,  ..., 0.7240, 0.7239, 0.6304])
+normalizing node_attr 0: tensor([[8.0000e+02, 5.1200e+02, 8.2400e+02, 7.9200e+02, 4.4080e-04, 1.5360e-05,
+         1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00,
+         1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00]]) ...
+normalizing node_attr 1: tensor([[1.0000e+00, 2.7000e-06, 3.0000e-07, 2.0265e-13, 5.5933e-06, 1.0000e+00,
+         1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00, 1.0000e+00,
+         1.0000e+00, 1.0000e+00, 4.0000e+00, 2.0000e+00, 1.0000e+00]]) ...
+self._data.edge_label tensor([0.6083, 0.3154, 0.2664,  ..., 0.7253, 0.7239, 0.7253])
+调用dataset_sampling处理数据集...
+数据加载器创建完成: 1个训练，1个验证，4个测试
+Debug - z shape: torch.Size([44061, 32]), edge_index shape: torch.Size([2, 88434])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([44061, 32]), edge_index shape: torch.Size([2, 88434])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([44061, 32]), edge_index shape: torch.Size([2, 88434])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([44061, 32]), edge_index shape: torch.Size([2, 88434])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([775085, 32]), edge_index shape: torch.Size([2, 1550530])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([775085, 32]), edge_index shape: torch.Size([2, 1550530])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([775085, 32]), edge_index shape: torch.Size([2, 1550530])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([775085, 32]), edge_index shape: torch.Size([2, 1550530])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([411523, 32]), edge_index shape: torch.Size([2, 823296])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([411523, 32]), edge_index shape: torch.Size([2, 823296])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([411523, 32]), edge_index shape: torch.Size([2, 823296])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([411523, 32]), edge_index shape: torch.Size([2, 823296])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([576709, 32]), edge_index shape: torch.Size([2, 1153740])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([576709, 32]), edge_index shape: torch.Size([2, 1153740])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([576709, 32]), edge_index shape: torch.Size([2, 1153740])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([576709, 32]), edge_index shape: torch.Size([2, 1153740])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([440466, 32]), edge_index shape: torch.Size([2, 881152])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([440466, 32]), edge_index shape: torch.Size([2, 881152])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([440466, 32]), edge_index shape: torch.Size([2, 881152])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([440466, 32]), edge_index shape: torch.Size([2, 881152])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([509641, 32]), edge_index shape: torch.Size([2, 1019622])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([509641, 32]), edge_index shape: torch.Size([2, 1019622])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([509641, 32]), edge_index shape: torch.Size([2, 1019622])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([509641, 32]), edge_index shape: torch.Size([2, 1019622])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([416782, 32]), edge_index shape: torch.Size([2, 833950])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([416782, 32]), edge_index shape: torch.Size([2, 833950])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([416782, 32]), edge_index shape: torch.Size([2, 833950])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([416782, 32]), edge_index shape: torch.Size([2, 833950])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([425529, 32]), edge_index shape: torch.Size([2, 851338])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([425529, 32]), edge_index shape: torch.Size([2, 851338])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([425529, 32]), edge_index shape: torch.Size([2, 851338])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([425529, 32]), edge_index shape: torch.Size([2, 851338])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([658079, 32]), edge_index shape: torch.Size([2, 1316780])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([658079, 32]), edge_index shape: torch.Size([2, 1316780])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([658079, 32]), edge_index shape: torch.Size([2, 1316780])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([658079, 32]), edge_index shape: torch.Size([2, 1316780])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([404664, 32]), edge_index shape: torch.Size([2, 809470])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([404664, 32]), edge_index shape: torch.Size([2, 809470])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([404664, 32]), edge_index shape: torch.Size([2, 809470])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([404664, 32]), edge_index shape: torch.Size([2, 809470])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([526309, 32]), edge_index shape: torch.Size([2, 1053232])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([526309, 32]), edge_index shape: torch.Size([2, 1053232])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([526309, 32]), edge_index shape: torch.Size([2, 1053232])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([526309, 32]), edge_index shape: torch.Size([2, 1053232])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([830094, 32]), edge_index shape: torch.Size([2, 1660574])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([830094, 32]), edge_index shape: torch.Size([2, 1660574])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([830094, 32]), edge_index shape: torch.Size([2, 1660574])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([830094, 32]), edge_index shape: torch.Size([2, 1660574])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([104512, 32]), edge_index shape: torch.Size([2, 209236])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([104512, 32]), edge_index shape: torch.Size([2, 209236])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([104512, 32]), edge_index shape: torch.Size([2, 209236])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([104512, 32]), edge_index shape: torch.Size([2, 209236])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([41239, 32]), edge_index shape: torch.Size([2, 82702])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([41239, 32]), edge_index shape: torch.Size([2, 82702])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([41239, 32]), edge_index shape: torch.Size([2, 82702])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([41239, 32]), edge_index shape: torch.Size([2, 82702])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([511151, 32]), edge_index shape: torch.Size([2, 1022526])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([511151, 32]), edge_index shape: torch.Size([2, 1022526])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([511151, 32]), edge_index shape: torch.Size([2, 1022526])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([511151, 32]), edge_index shape: torch.Size([2, 1022526])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([905465, 32]), edge_index shape: torch.Size([2, 1811384])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([905465, 32]), edge_index shape: torch.Size([2, 1811384])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([905465, 32]), edge_index shape: torch.Size([2, 1811384])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([905465, 32]), edge_index shape: torch.Size([2, 1811384])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([335707, 32]), edge_index shape: torch.Size([2, 671602])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([335707, 32]), edge_index shape: torch.Size([2, 671602])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([335707, 32]), edge_index shape: torch.Size([2, 671602])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([335707, 32]), edge_index shape: torch.Size([2, 671602])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([402348, 32]), edge_index shape: torch.Size([2, 804972])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([402348, 32]), edge_index shape: torch.Size([2, 804972])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([402348, 32]), edge_index shape: torch.Size([2, 804972])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([402348, 32]), edge_index shape: torch.Size([2, 804972])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([748059, 32]), edge_index shape: torch.Size([2, 1496510])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([748059, 32]), edge_index shape: torch.Size([2, 1496510])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([748059, 32]), edge_index shape: torch.Size([2, 1496510])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([748059, 32]), edge_index shape: torch.Size([2, 1496510])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([184625, 32]), edge_index shape: torch.Size([2, 369516])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([184625, 32]), edge_index shape: torch.Size([2, 369516])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([184625, 32]), edge_index shape: torch.Size([2, 369516])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([184625, 32]), edge_index shape: torch.Size([2, 369516])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([45310, 32]), edge_index shape: torch.Size([2, 90826])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([45310, 32]), edge_index shape: torch.Size([2, 90826])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([45310, 32]), edge_index shape: torch.Size([2, 90826])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([45310, 32]), edge_index shape: torch.Size([2, 90826])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([352271, 32]), edge_index shape: torch.Size([2, 704952])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([352271, 32]), edge_index shape: torch.Size([2, 704952])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([352271, 32]), edge_index shape: torch.Size([2, 704952])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([352271, 32]), edge_index shape: torch.Size([2, 704952])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([1321288, 32]), edge_index shape: torch.Size([2, 2643190])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([1321288, 32]), edge_index shape: torch.Size([2, 2643190])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([1321288, 32]), edge_index shape: torch.Size([2, 2643190])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([1321288, 32]), edge_index shape: torch.Size([2, 2643190])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([110941, 32]), edge_index shape: torch.Size([2, 222224])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([110941, 32]), edge_index shape: torch.Size([2, 222224])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([110941, 32]), edge_index shape: torch.Size([2, 222224])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([110941, 32]), edge_index shape: torch.Size([2, 222224])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([258904, 32]), edge_index shape: torch.Size([2, 518112])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([258904, 32]), edge_index shape: torch.Size([2, 518112])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([258904, 32]), edge_index shape: torch.Size([2, 518112])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([258904, 32]), edge_index shape: torch.Size([2, 518112])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([48817, 32]), edge_index shape: torch.Size([2, 97922])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([48817, 32]), edge_index shape: torch.Size([2, 97922])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([48817, 32]), edge_index shape: torch.Size([2, 97922])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([48817, 32]), edge_index shape: torch.Size([2, 97922])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([365745, 32]), edge_index shape: torch.Size([2, 732050])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([365745, 32]), edge_index shape: torch.Size([2, 732050])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([365745, 32]), edge_index shape: torch.Size([2, 732050])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([365745, 32]), edge_index shape: torch.Size([2, 732050])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([762155, 32]), edge_index shape: torch.Size([2, 1524632])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([762155, 32]), edge_index shape: torch.Size([2, 1524632])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([762155, 32]), edge_index shape: torch.Size([2, 1524632])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([762155, 32]), edge_index shape: torch.Size([2, 1524632])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([188621, 32]), edge_index shape: torch.Size([2, 377504])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([188621, 32]), edge_index shape: torch.Size([2, 377504])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([188621, 32]), edge_index shape: torch.Size([2, 377504])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([188621, 32]), edge_index shape: torch.Size([2, 377504])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([115758, 32]), edge_index shape: torch.Size([2, 231710])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([115758, 32]), edge_index shape: torch.Size([2, 231710])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([115758, 32]), edge_index shape: torch.Size([2, 231710])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([115758, 32]), edge_index shape: torch.Size([2, 231710])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([425377, 32]), edge_index shape: torch.Size([2, 851158])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([425377, 32]), edge_index shape: torch.Size([2, 851158])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([425377, 32]), edge_index shape: torch.Size([2, 851158])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([425377, 32]), edge_index shape: torch.Size([2, 851158])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([1215504, 32]), edge_index shape: torch.Size([2, 2431522])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([1215504, 32]), edge_index shape: torch.Size([2, 2431522])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([1215504, 32]), edge_index shape: torch.Size([2, 2431522])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([1215504, 32]), edge_index shape: torch.Size([2, 2431522])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([426237, 32]), edge_index shape: torch.Size([2, 852722])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([426237, 32]), edge_index shape: torch.Size([2, 852722])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([426237, 32]), edge_index shape: torch.Size([2, 852722])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([426237, 32]), edge_index shape: torch.Size([2, 852722])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([510643, 32]), edge_index shape: torch.Size([2, 1021652])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([510643, 32]), edge_index shape: torch.Size([2, 1021652])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([510643, 32]), edge_index shape: torch.Size([2, 1021652])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([510643, 32]), edge_index shape: torch.Size([2, 1021652])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([453894, 32]), edge_index shape: torch.Size([2, 908114])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([453894, 32]), edge_index shape: torch.Size([2, 908114])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([453894, 32]), edge_index shape: torch.Size([2, 908114])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([453894, 32]), edge_index shape: torch.Size([2, 908114])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([356009, 32]), edge_index shape: torch.Size([2, 712392])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([356009, 32]), edge_index shape: torch.Size([2, 712392])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([356009, 32]), edge_index shape: torch.Size([2, 712392])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([356009, 32]), edge_index shape: torch.Size([2, 712392])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([46093, 32]), edge_index shape: torch.Size([2, 92366])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([46093, 32]), edge_index shape: torch.Size([2, 92366])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([46093, 32]), edge_index shape: torch.Size([2, 92366])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([46093, 32]), edge_index shape: torch.Size([2, 92366])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([120575, 32]), edge_index shape: torch.Size([2, 241560])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([120575, 32]), edge_index shape: torch.Size([2, 241560])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([120575, 32]), edge_index shape: torch.Size([2, 241560])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([120575, 32]), edge_index shape: torch.Size([2, 241560])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([176751, 32]), edge_index shape: torch.Size([2, 353752])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([176751, 32]), edge_index shape: torch.Size([2, 353752])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([176751, 32]), edge_index shape: torch.Size([2, 353752])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([176751, 32]), edge_index shape: torch.Size([2, 353752])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([130008, 32]), edge_index shape: torch.Size([2, 260376])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([130008, 32]), edge_index shape: torch.Size([2, 260376])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([130008, 32]), edge_index shape: torch.Size([2, 260376])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([130008, 32]), edge_index shape: torch.Size([2, 260376])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([271887, 32]), edge_index shape: torch.Size([2, 544110])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([271887, 32]), edge_index shape: torch.Size([2, 544110])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([271887, 32]), edge_index shape: torch.Size([2, 544110])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([271887, 32]), edge_index shape: torch.Size([2, 544110])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([430198, 32]), edge_index shape: torch.Size([2, 860632])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([430198, 32]), edge_index shape: torch.Size([2, 860632])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([430198, 32]), edge_index shape: torch.Size([2, 860632])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([430198, 32]), edge_index shape: torch.Size([2, 860632])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([412318, 32]), edge_index shape: torch.Size([2, 824866])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([412318, 32]), edge_index shape: torch.Size([2, 824866])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([412318, 32]), edge_index shape: torch.Size([2, 824866])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([412318, 32]), edge_index shape: torch.Size([2, 824866])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([65944, 32]), edge_index shape: torch.Size([2, 132094])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([65944, 32]), edge_index shape: torch.Size([2, 132094])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([65944, 32]), edge_index shape: torch.Size([2, 132094])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([65944, 32]), edge_index shape: torch.Size([2, 132094])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([38554, 32]), edge_index shape: torch.Size([2, 77292])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([38554, 32]), edge_index shape: torch.Size([2, 77292])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([38554, 32]), edge_index shape: torch.Size([2, 77292])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([38554, 32]), edge_index shape: torch.Size([2, 77292])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([125676, 32]), edge_index shape: torch.Size([2, 251804])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([125676, 32]), edge_index shape: torch.Size([2, 251804])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([125676, 32]), edge_index shape: torch.Size([2, 251804])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([125676, 32]), edge_index shape: torch.Size([2, 251804])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([1113176, 32]), edge_index shape: torch.Size([2, 2226664])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([1113176, 32]), edge_index shape: torch.Size([2, 2226664])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([1113176, 32]), edge_index shape: torch.Size([2, 2226664])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([1113176, 32]), edge_index shape: torch.Size([2, 2226664])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([1489816, 32]), edge_index shape: torch.Size([2, 2980104])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([1489816, 32]), edge_index shape: torch.Size([2, 2980104])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([1489816, 32]), edge_index shape: torch.Size([2, 2980104])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([1489816, 32]), edge_index shape: torch.Size([2, 2980104])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([32162, 32]), edge_index shape: torch.Size([2, 64598])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([32162, 32]), edge_index shape: torch.Size([2, 64598])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([32162, 32]), edge_index shape: torch.Size([2, 64598])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([32162, 32]), edge_index shape: torch.Size([2, 64598])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([135184, 32]), edge_index shape: torch.Size([2, 270766])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([135184, 32]), edge_index shape: torch.Size([2, 270766])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([135184, 32]), edge_index shape: torch.Size([2, 270766])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([135184, 32]), edge_index shape: torch.Size([2, 270766])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([861880, 32]), edge_index shape: torch.Size([2, 1724222])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([861880, 32]), edge_index shape: torch.Size([2, 1724222])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([861880, 32]), edge_index shape: torch.Size([2, 1724222])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([861880, 32]), edge_index shape: torch.Size([2, 1724222])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([157317, 32]), edge_index shape: torch.Size([2, 315072])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([157317, 32]), edge_index shape: torch.Size([2, 315072])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([157317, 32]), edge_index shape: torch.Size([2, 315072])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([157317, 32]), edge_index shape: torch.Size([2, 315072])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([404102, 32]), edge_index shape: torch.Size([2, 808438])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([404102, 32]), edge_index shape: torch.Size([2, 808438])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([404102, 32]), edge_index shape: torch.Size([2, 808438])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([404102, 32]), edge_index shape: torch.Size([2, 808438])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([37925, 32]), edge_index shape: torch.Size([2, 76070])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([37925, 32]), edge_index shape: torch.Size([2, 76070])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([37925, 32]), edge_index shape: torch.Size([2, 76070])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([37925, 32]), edge_index shape: torch.Size([2, 76070])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([47691, 32]), edge_index shape: torch.Size([2, 95576])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([47691, 32]), edge_index shape: torch.Size([2, 95576])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([47691, 32]), edge_index shape: torch.Size([2, 95576])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([47691, 32]), edge_index shape: torch.Size([2, 95576])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([792361, 32]), edge_index shape: torch.Size([2, 1584976])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([792361, 32]), edge_index shape: torch.Size([2, 1584976])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([792361, 32]), edge_index shape: torch.Size([2, 1584976])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([792361, 32]), edge_index shape: torch.Size([2, 1584976])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([191979, 32]), edge_index shape: torch.Size([2, 384334])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([191979, 32]), edge_index shape: torch.Size([2, 384334])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([191979, 32]), edge_index shape: torch.Size([2, 384334])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([191979, 32]), edge_index shape: torch.Size([2, 384334])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([883828, 32]), edge_index shape: torch.Size([2, 1768144])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([883828, 32]), edge_index shape: torch.Size([2, 1768144])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([883828, 32]), edge_index shape: torch.Size([2, 1768144])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([883828, 32]), edge_index shape: torch.Size([2, 1768144])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([566855, 32]), edge_index shape: torch.Size([2, 1134078])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([566855, 32]), edge_index shape: torch.Size([2, 1134078])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([566855, 32]), edge_index shape: torch.Size([2, 1134078])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([566855, 32]), edge_index shape: torch.Size([2, 1134078])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([1339965, 32]), edge_index shape: torch.Size([2, 2680354])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([1339965, 32]), edge_index shape: torch.Size([2, 2680354])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([1339965, 32]), edge_index shape: torch.Size([2, 2680354])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([1339965, 32]), edge_index shape: torch.Size([2, 2680354])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([187529, 32]), edge_index shape: torch.Size([2, 375320])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([187529, 32]), edge_index shape: torch.Size([2, 375320])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([187529, 32]), edge_index shape: torch.Size([2, 375320])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([187529, 32]), edge_index shape: torch.Size([2, 375320])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([443784, 32]), edge_index shape: torch.Size([2, 887882])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([443784, 32]), edge_index shape: torch.Size([2, 887882])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([443784, 32]), edge_index shape: torch.Size([2, 887882])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([443784, 32]), edge_index shape: torch.Size([2, 887882])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([468754, 32]), edge_index shape: torch.Size([2, 937874])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([468754, 32]), edge_index shape: torch.Size([2, 937874])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([468754, 32]), edge_index shape: torch.Size([2, 937874])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([468754, 32]), edge_index shape: torch.Size([2, 937874])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([494647, 32]), edge_index shape: torch.Size([2, 989732])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([494647, 32]), edge_index shape: torch.Size([2, 989732])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([494647, 32]), edge_index shape: torch.Size([2, 989732])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([494647, 32]), edge_index shape: torch.Size([2, 989732])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([883882, 32]), edge_index shape: torch.Size([2, 1768304])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([883882, 32]), edge_index shape: torch.Size([2, 1768304])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([883882, 32]), edge_index shape: torch.Size([2, 1768304])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([883882, 32]), edge_index shape: torch.Size([2, 1768304])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([922818, 32]), edge_index shape: torch.Size([2, 1846226])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([922818, 32]), edge_index shape: torch.Size([2, 1846226])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([922818, 32]), edge_index shape: torch.Size([2, 1846226])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([922818, 32]), edge_index shape: torch.Size([2, 1846226])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([39569, 32]), edge_index shape: torch.Size([2, 79310])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([39569, 32]), edge_index shape: torch.Size([2, 79310])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([39569, 32]), edge_index shape: torch.Size([2, 79310])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([39569, 32]), edge_index shape: torch.Size([2, 79310])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([36712, 32]), edge_index shape: torch.Size([2, 73746])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([36712, 32]), edge_index shape: torch.Size([2, 73746])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([36712, 32]), edge_index shape: torch.Size([2, 73746])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([36712, 32]), edge_index shape: torch.Size([2, 73746])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([110967, 32]), edge_index shape: torch.Size([2, 222270])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([110967, 32]), edge_index shape: torch.Size([2, 222270])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([110967, 32]), edge_index shape: torch.Size([2, 222270])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([110967, 32]), edge_index shape: torch.Size([2, 222270])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([337784, 32]), edge_index shape: torch.Size([2, 675896])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([337784, 32]), edge_index shape: torch.Size([2, 675896])
+Debug - z device: cuda:0, edge_index device: cuda:0
+Debug - z shape: torch.Size([337784, 32]), edge_index shape: torch.Size([2, 675896])
+Debug - z device: cuda:0, edge_index device: cuda:0

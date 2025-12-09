@@ -1,0 +1,43 @@
+============= PID = 3162464 ============= 
+Log file created at: ./logs/regression_ultra8t_to_ssram+digtime+timing_ctrl+array_128_32_8t_20250404_072113.txt
+Parameters:
+  seed: 42
+  train_dataset: ultra8t
+  test_dataset: ssram+digtime+timing_ctrl+array_128_32_8t
+  task: regression
+  max_dist: 350
+  num_workers: 4
+  gpu: 1
+  epochs: 200
+  batch_size: 32
+  lr: 5e-05
+  num_gnn_layers: 4
+  num_head_layers: 2
+  hid_dim: 32
+  dropout: 0.3
+  use_bn: 0
+  act_fn: relu
+  src_dst_agg: concat
+  num_hops: 4
+  to_undirected: 1
+  use_stats: 1
+  log_dir: ./logs
+  use_focal_loss: 0
+  train_sample_rate: 0.1
+  test_sample_rate: 1.0
+  use_amp: 1
+Namespace(seed=42, train_dataset='ultra8t', test_dataset='ssram+digtime+timing_ctrl+array_128_32_8t', task='regression', max_dist=350, num_workers=4, gpu=1, epochs=200, batch_size=32, lr=5e-05, num_gnn_layers=4, num_head_layers=2, hid_dim=32, dropout=0.3, use_bn=0, act_fn='relu', src_dst_agg='concat', num_hops=4, to_undirected=1, use_stats=1, log_dir='./logs', use_focal_loss=0, train_sample_rate=0.1, test_sample_rate=1.0, use_amp=1)
+SealSramDataset includes ['ultra8t'] circuits
+load processed ultra8t, len(data_list)=555756, data_offset=0 
+PID = 3162464
+Building dataset ultra8t took 00:00:00.93
+Dataloader: Loading success.
+SealSramDataset includes ['ssram', 'digtime', 'timing_ctrl', 'array_128_32_8t'] circuits
+load processed ssram, len(data_list)=175413, data_offset=0 
+load processed digtime, len(data_list)=2814, data_offset=1 
+load processed timing_ctrl, len(data_list)=3333, data_offset=2 
+load processed array_128_32_8t, len(data_list)=73569, data_offset=3 
+PID = 3162464
+Building dataset ssram+digtime+timing_ctrl+array_128_32_8t took 00:00:00.16
+Dataloader: Loading success.
+====== Train ultra8t to Test ssram+digtime+timing_ctrl+array_128_32_8t ======

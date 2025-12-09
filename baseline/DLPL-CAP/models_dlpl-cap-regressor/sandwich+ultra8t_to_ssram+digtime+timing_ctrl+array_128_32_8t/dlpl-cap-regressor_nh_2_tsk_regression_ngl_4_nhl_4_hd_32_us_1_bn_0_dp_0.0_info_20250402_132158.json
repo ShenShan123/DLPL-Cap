@@ -1,0 +1,51 @@
+{
+    "model_name": "regressor",
+    "dataset_name": "sandwich+ultra8t_to_ssram+digtime+timing_ctrl+array_128_32_8t",
+    "epoch": 4,
+    "timestamp": "20250402_132158",
+    "params": {
+        "train_dataset": "sandwich+ultra8t",
+        "test_dataset": "ssram+digtime+timing_ctrl+array_128_32_8t",
+        "task": "regression",
+        "max_dist": 350,
+        "lr": 0.001,
+        "num_gnn_layers": 4,
+        "num_head_layers": 4,
+        "hid_dim": 32,
+        "dropout": 0.0,
+        "use_bn": 0,
+        "act_fn": "relu",
+        "src_dst_agg": "concat",
+        "num_hops": 2,
+        "to_undirected": 1,
+        "use_stats": 1,
+        "log_dir": "./logs",
+        "use_focal_loss": 0,
+        "train_sample_rate": 0.1,
+        "test_sample_rate": 1.0
+    },
+    "metrics": {
+        "mae": 0.004038086347391329,
+        "r2": 0.6554428339004517,
+        "loss": 0.000649293855172913,
+        "test_results": {
+            "ssram": {
+                "mae": 0.00556918753916013,
+                "r2": 0.24876976013183594
+            },
+            "digtime": {
+                "mae": 0.005249426880879189,
+                "r2": 0.3005450963973999
+            },
+            "timing_ctrl": {
+                "mae": 0.006353137594978265,
+                "r2": 0.42193108797073364
+            },
+            "array_128_32_8t": {
+                "mae": 0.005438661979884243,
+                "r2": 0.16414201259613037
+            }
+        }
+    },
+    "is_best": true
+}
